@@ -4,7 +4,7 @@ networks:
 services:
     nginx:
         image: "nginx:stable-alpine"
-        container_name: "nginx_movie_pro"
+        container_name: "nginx_test"
         ports:
             - "80:80"
         volumes:
@@ -17,7 +17,7 @@ services:
             - app-network
     mysql:
         image: "mariadb:10.5.8"
-        container_name: "mysql_movie_pro"
+        container_name: "mysql_test"
         restart: unless-stopped
         tty: true
         command: --max_allowed_packet=1073741824
@@ -36,7 +36,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        container_name: "php_movie_pro"
+        container_name: "php_test"
 
         volumes:
             - "./:/var/www/html"
@@ -48,7 +48,7 @@ services:
 
     npm:
         image: "node:13.7"
-        container_name: "npm_movie_pro"
+        container_name: "npm_test"
         volumes:
             - "./:/var/www/html"
         working_dir: /var/www/html
