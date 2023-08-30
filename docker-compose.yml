@@ -42,7 +42,7 @@ services:
             - "./:/var/www/html"
             - "./php.ini:/usr/local/etc/php/php.ini"
         ports:
-            - "9000:9000"
+            - "9001:9001"
         networks:
             - app-network
 
