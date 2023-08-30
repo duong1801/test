@@ -45,12 +45,3 @@ services:
             - "9001:9001"
         networks:
             - app-network
-
-    npm:
-        image: "node:13.7"
-        container_name: "npm_test"
-        volumes:
-            - "./:/var/www/html"
-        working_dir: /var/www/html
-        entrypoint:
-            - npm
